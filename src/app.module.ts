@@ -10,7 +10,7 @@ import { ConfigModule } from '@nestjs/config';
     ConfigModule.forRoot({
       envFilePath: ['.env.development.local'],
     }),
-    MongooseModule.forRoot('mongodb+srv://root:hardc0deX@finxcluster.epdly.mongodb.net/finxCluster?retryWrites=true&w=majority', { useFindAndModify: false }),
+    MongooseModule.forRoot('process.env.MONGO_URI', { useFindAndModify: false }),
     ArticleModule,
   ],
   controllers: [AppController],
